@@ -1,17 +1,23 @@
 import { Project } from '../types';
+import autonomousDriveImage from './Autonomus-drive.webp';
+import poolIt from './Pool-It.jpg';
+import imageCaption from './Image-Caption.png';
+
 
 export const projects: Project[] = [
   {
     title: 'Autonomous-Driving-System',
     description: 'A Deep Reinforcement Learning Model for Autonomous Driving.',
-    image: 'src/data/Autonomus-drive.webp',
+    // image: 'src/data/Autonomus-drive.webp',
+    image: autonomousDriveImage,
     githubLink: 'https://github.com/Dhruv590/Autonomous-Driving-System',
     technologies: ['PyTorch', 'Autoencoder', 'Python', 'CUDA'],
   },
   {
     title: 'Pool It',
     description: 'Pool it! Share your ride, save on costs, enjoy HOV lanes, and make your commute more enjoyable.',
-    image: 'src/data/Pool-It.jpg',
+    // image: 'src/data/Pool-It.jpg',
+    image: poolIt,
     githubLink: 'https://github.com/bhalavat-nisarg/inrix-hack-2022',
     technologies: ['PyTorch', 'OpenAI Gym', 'Python', 'NumPy'],
   },
@@ -25,7 +31,8 @@ export const projects: Project[] = [
   {
     title: 'ImageCaptioning',
     description: 'implements an end-to-end Image Captioning system.',
-    image: 'src/data/Image-Caption.png',
+    // image: 'src/data/Image-Caption.png',
+    image: imageCaption,
     githubLink: 'https://github.com/Dhruv590/ImageCaptioning',
     technologies: ['TensorFlow', 'Pandas', 'Scikit-learn', 'Python'],
   },
