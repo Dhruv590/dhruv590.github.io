@@ -9,7 +9,7 @@ export default function Home() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-7xl font-bold mb-6 text-white"
+              className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white"
             >
               AI Engineer
             </motion.h1>
@@ -17,7 +17,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-white/80"
+              className="text-lg md:text-xl text-white/80"
             >
               Currently on a quest to make my program crash.... slightly less!
             </motion.p>
