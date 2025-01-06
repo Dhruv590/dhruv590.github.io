@@ -26,6 +26,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <img
           src={project.image}
           alt={project.title}
+          loading={index < 3 ? "eager" : "lazy"}
+          decoding="async"
           className="w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
         />
       </div>

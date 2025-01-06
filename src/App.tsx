@@ -8,17 +8,34 @@ import Resume from './pages/Resume';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import { getBackgroundForPath } from './data/backgrounds';
+import { useEffect, useState } from 'react';
 
 function App() {
   const location = useLocation();
-  const currentBackground = getBackgroundForPath(location.pathname);
+  const [currentBackground, setCurrentBackground] = useState(getBackgroundForPath(location.pathname));
+  const [nextBackground, setNextBackground] = useState('');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const newBackground = getBackgroundForPath(location.pathname);
+    setNextBackground(newBackground);
+    setIsTransitioning(true);
+
+    const img = new Image();
+    img.src = newBackground;
+    img.onload = () => {
+      setCurrentBackground(newBackground);
+      setIsTransitioning(false);
+    };
+  }, [location.pathname]);
 
   return (
     <div 
       className="min-h-screen bg-cover bg-center bg-fixed text-white flex flex-col"
       style={{
         backgroundImage: `url(${currentBackground})`,
-        transition: 'background-image 0.5s ease-in-out'
+        transition: isTransitioning ? 'opacity 0.3s ease-in-out' : 'none',
+        opacity: isTransitioning ? 0.8 : 1
       }}
     >
       <Navbar />
