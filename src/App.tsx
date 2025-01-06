@@ -13,12 +13,10 @@ import { useEffect, useState } from 'react';
 function App() {
   const location = useLocation();
   const [currentBackground, setCurrentBackground] = useState(getBackgroundForPath(location.pathname));
-  const [nextBackground, setNextBackground] = useState('');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const newBackground = getBackgroundForPath(location.pathname);
-    setNextBackground(newBackground);
     setIsTransitioning(true);
 
     const img = new Image();
